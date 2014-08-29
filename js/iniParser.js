@@ -60,7 +60,7 @@ function activarB () {
  *  obtener los tokens del mismo.
  */
 function parsear () {
-   alert("CLick!");
+   //alert("CLick!");
    
    var tokens = lexer(originaltxt.value);
    var pretty = tokensToString(tokens);
@@ -91,6 +91,7 @@ function lexer(input) {
   var comments       = /^[^\S\n\r]*[;#]([^\n\r]*)\n/;
   var nameEqualValue = /^([^=;\r\n]+)=([^;\r\n]*\n)/;
   var any            = /^(.)+\n/;
+  var finalErr = false;
 
   var result = [];
   var m = null;
@@ -118,8 +119,15 @@ function lexer(input) {
       //input = '';
     }
     else {
-      alert("Fatal Error!" + String.substr(input, 0, 20));
-      input = '';
+      if (!finalErr) {
+         finalErr = true;
+         input += "\n";
+      } else {
+         alert("Fatal Error!" + String.substr(input, 0, 20));
+         input = '';
+         finalErr = false;
+      }
+      
     }
   }
   return result;
