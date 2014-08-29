@@ -13,7 +13,7 @@ h1
 th, td
    { 
       vertical-align: top; 
-      text-align: right; 
+      text-align: left; 
    }  
    
 tr.error       { background-color: red; }
@@ -48,7 +48,54 @@ table.center
    }
    
 pre.output   { background-color: white; }
-span.repeated { background-color: red }
+
+ol  {  vertical-align: top; 
+       text-align: left;
+       border: 1px solid #909090;
+       background-color:#aaaaaa;
+       //color:#000000; 
+       list-style-position:inside;
+       margin:0px;
+       padding: 0px;
+    }
+
+li  {  text-align: left;
+       vertical-align: top;
+       font-size: medium;
+       //border: 1px solid #909090;
+       background-color:#ffffff;
+       color: #909090; 
+       margin:1px;
+       padding-left: 1px;
+    }
+
+span { vertical-align: top;
+       text-align: left;
+       font-size: large;
+       position: relative; 
+       left:-10px;
+     }
+
+span.type {
+             text-align: right;
+             float: right;
+             vertical-align: bottom;
+             font-size: small;
+             color: #909090;
+             margin: 0px;
+             padding: 0px;
+             position: relative; 
+             right:0px;
+             left:0px;
+             top: -20px;
+             
+          }
+
+span.header { color: blue }
+span.comments { color: orange }
+span.blanks { color: green }
+span.nameEqualValue { color: cyan }
+span.error { color: red }
 
 body
    {
